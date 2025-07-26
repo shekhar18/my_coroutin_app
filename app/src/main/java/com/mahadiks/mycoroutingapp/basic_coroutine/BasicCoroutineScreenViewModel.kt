@@ -1,11 +1,10 @@
-package com.mahadiks.mycoroutingapp
+package com.mahadiks.mycoroutingapp.basic_coroutine
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -16,7 +15,6 @@ class BasicCoroutineScreenViewModel() : ViewModel() {
     //in this Below Example we use Coroutine which execute the code on main thread
     // and when we try to update the liveData we need to use setValue method to update the liveData
     //if we use Dispatchers.IO then we need to use postValue method to update the liveData because we updating livedata from background thread.
-
     private val _updateCoroutinesState: MutableLiveData<String> =
         MutableLiveData<String>("Coroutine is not running")
     val updateCoroutinesState: LiveData<String> = _updateCoroutinesState
