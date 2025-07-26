@@ -9,14 +9,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.mahadiks.mycoroutingapp.download_file_with_coroutine.DownloadImageUsingCoroutineViewModel
-import com.mahadiks.mycoroutingapp.download_file_with_coroutine.ShowDownloadImageScreen
+import com.mahadiks.mycoroutingapp.structured_concurrency.StructureConcurrencyScreen
+import com.mahadiks.mycoroutingapp.structured_concurrency.StructureConcurrencyScreenViewModel
 import com.mahadiks.mycoroutingapp.ui.theme.MyCoroutingAppTheme
+import kotlin.getValue
 
 class MainActivity : ComponentActivity() {
 
     //val viewModel: BasicCoroutineScreenViewModel by viewModels()
-    val viewModel: DownloadImageUsingCoroutineViewModel by viewModels()
+    //val viewModel: DownloadImageUsingCoroutineViewModel by viewModels()
+    val viewModel: StructureConcurrencyScreenViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,8 @@ class MainActivity : ComponentActivity() {
             MyCoroutingAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
-                    ShowDownloadImageScreen(modifier = Modifier.padding(innerPadding), viewModel, this)
+                    StructureConcurrencyScreen(modifier = Modifier.padding(innerPadding), viewModel, this)
+                    //ShowDownloadImageScreen(modifier = Modifier.padding(innerPadding), viewModel, this)
                     //BasicCoroutineScreen(modifier = Modifier.padding(innerPadding), viewModel, this)
 
                 }
